@@ -1,0 +1,48 @@
+<br>
+    <h1 class="text-center" style="color:black;">Crop / Yield Prediction</h1>
+          <div class="col-lg-6 m-auto d-block" >
+              <form>
+
+                <label class="font-weight-bold">State Name : </label> 
+                <select class="form-control text-dark mr-5" id="state"  [(ngModel)]="backservice.crop.State_Name" name="state"  (ngModelChange)="changestate($event)">
+                    <option>Select state name</option>
+                    <option *ngFor="let i of state" [ngValue]="i">{{i}}</option>
+                </select>
+                <br>
+
+                  <label class="font-weight-bold">District Name : </label> 
+                  <select class="form-control text-dark mr-5" id="district"  [(ngModel)]="backservice.crop.District_Name" name="district"  (ngModelChange)="changedistrict($event)">
+                    <option>Select district name</option>
+                    <option *ngFor="let i of district" [ngValue]="i">{{i}}</option>
+                </select>
+                <br>
+
+                  <label class="font-weight-bold">Crop Year : </label> 
+                  <input id = "crop" type="number" name="crop" placeholder="Enter year" class="form-control" [(ngModel)]="backservice.crop.Crop_Year">
+                  <span class="error"></span>
+                  <br>
+
+                  <label class="font-weight-bold">Season : </label> 
+                  <select class="form-control text-dark mr-5" id="season"  [(ngModel)]="backservice.crop.Season" name="season">
+                    <option>Select season name</option>
+                    <option *ngFor="let i of season" [ngValue]="i">{{i}}</option>
+                  </select>
+                  <br>
+
+                  <label class="font-weight-bold">Crop : </label> 
+                  <select class="form-control text-dark mr-5" id="crop1"  [(ngModel)]="backservice.crop.Crop" name="crop1">
+                    <option>Select crop name</option>
+                    <option *ngFor="let i of crop1" [ngValue]="i">{{i}}</option>
+                  </select>
+                  <br>
+
+                  <label class="font-weight-bold">Rainfall : </label> 
+                  <input type="number" id="rainfall" name="rainfall" placeholder="Enter rainfall quantity" class="form-control" [(ngModel)]="backservice.crop.Rainfall">
+                  <span class="error"> </span>
+                  <br>
+                  
+                  <div class="text-center">
+                      <input type="submit" name="submit" class="btn btn-success mb-4 align-center" (click)="OnSubmit()" value="Submit" >
+                  </div>
+              </form>
+          </div>
